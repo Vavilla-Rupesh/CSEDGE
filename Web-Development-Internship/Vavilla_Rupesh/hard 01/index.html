@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="tic-tac-toe.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="board">
+    <div class="header">
+        <h1>Tic Tac Toe</h1>
+    </div>
+    <div class="tic-tac-toe">
+        <div class="cell" id="r1c1" onclick="check1();check()"></div>
+        <div class="cell" id="r1c2" onclick="check2();check()"></div>
+        <div class="cell" id="r1c3" onclick="check3();check()"></div>
+        <div class="cell" id="r2c1" onclick="check4();check()"></div>
+        <div class="cell" id="r2c2" onclick="check5();check()"></div>
+        <div class="cell" id="r2c3" onclick="check6();check()"></div>
+        <div class="cell" id="r3c1" onclick="check7();check()"></div>
+        <div class="cell" id="r3c2" onclick="check8();check()"></div>
+        <div class="cell" id="r3c3" onclick="check9();check()"></div>
+    </div>
+    <div class="result">
+        <h2 id="result"></h2>
+    </div>
+    <div class="footer">
+        <button onclick="reset()" id="reset">Reset</button> 
+    </div>      
+</div>
+</body>
+</html>

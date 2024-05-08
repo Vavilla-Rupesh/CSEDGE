@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+body {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.heading {
+  font-size: 2em;
+  margin: 3em 0 2em;
+}
+/* Input Field Animation */
+.inputGroup {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1em 0;
+}
+.inputGroup input {
+  background-color: inherit;
+  color: blue;
+  font-size: 1em;
+  padding: 30px 10px 10px;
+  border: none;
+  border-bottom: 2px solid gray;
+  outline: none;
+}
+.inputGroup input::placeholder {
+  opacity: 0;
+}
+.inputGroup label {
+  position: absolute;
+  padding-left: 10px;
+  margin-bottom: 2px;
+  color:ghostwhite;
+  cursor: pointer;
+  transform: translate(4px, -14px) scale(1.02);
+  transform-origin: left top;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.inputGroup input,
+.inputGroup label {
+  transition: 0.4s all ease;
+}
+.inputGroup input:focus,
+.inputGroup input:not(:placeholder-shown) {
+  border-bottom: 2px solid #000;
+}
+.inputGroup input:focus ~ label,
+.inputGroup input:not(:placeholder-shown) ~ label {
+  transform: translate(10px, -35px) scale(0.9);
+  padding: 0;
+  color: ghostwhite;
+}
+.attributes{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap:20px;
+}
+.attributes>div>label{
+    color:ghostwhite;
+    font-size: 1.2em;
+}
+.attributes>div>select{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+.attributes>div{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    background: rgb(0,223,255);
+    background: linear-gradient(0deg, rgba(0,223,255,1) 0%, rgba(0,13,154,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="qrcode.css">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>QR Code Generator</h1>
+        </div>
+        <div class="attributes">
+            <div class="inputType">
+            <label for="size">Select Size</label>
+            <select id="size">
+            <option value="100">100x100</option>
+            <option value="200">200x200</option>
+            <option value="300">300x300</option>
+            <option value="400">400x400</option>
+            </select>
+            </div>
+            <div class="inputType">
+            <label for="bgcolor">Select Background Color</label>
+            <select id="bgcolor">
+            <option value="#ffffff">White</option>
+            <option value="#ff0000">Red</option>
+            <option value="#00ff00">Green</option>
+            <option value="#0000ff">Blue</option>
+            <option value="#ffff00">Yellow</option>
+            <option value="#000000">Black</option>
+            <option value="#800080">Purple</option>
+            <option value="#ffa500">Orange</option>
+            </select>
+        </div>
+            <div class="inputType">
+            <label for="color">Select Color</label>
+            <select id="color">
+            <option value="#000000">Black</option>
+            <option value="#ff0000">Red</option>
+            <option value="#00ff00">Green</option>
+            <option value="#0000ff">Blue</option>
+            <option value="#ffff00">Yellow</option>
+            <option value="#ffffff">White</option>
+            <option value="#800080">Purple</option>
+            <option value="#ffa500">Orange</option>
+            </select>
+            </div>
+        </div>
+        <div class="inputGroup">
+          <input type="text" id="qrText" placeholder="Enter Text" />
+          <label for="qrText">Enter Text</label>
+        </div>
+        <canvas id="qrCode"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        let qr;
+
+        function generateQRCode() {
+          const qrText = document.querySelector("#qrText").value.trim();
+          const size = document.getElementById("size").value;
+          const bgColor = document.getElementById("bgcolor").value;
+          const color = document.getElementById("color").value;
+    
+          if (qrText !== "") {
+            qr = new QRious({
+              element: document.querySelector("#qrCode"),
+              size: parseInt(size),
+              value: qrText,
+              background: bgColor,
+              foreground: color,
+              level: "M",
+            });
+          }
+        }
+    
+        // Generate QR code when page loads with default values
+        window.onload = generateQRCode;
+    
+        // Generate QR code when input fields change
+        document.getElementById("qrText").addEventListener("input", generateQRCode);
+        document.getElementById("size").addEventListener("input", generateQRCode);
+        document.getElementById("bgcolor").addEventListener("input", generateQRCode);
+        document.getElementById("color").addEventListener("input", generateQRCode);
+    </script>
+</body>
+</html>
